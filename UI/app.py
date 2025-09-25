@@ -3,19 +3,20 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 
-# ✅ Dummy TrueDivide Layer
+# ✅ TrueDivide Layer Hack
 class TrueDivide(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-    def call(self, inputs):
-        # Eğer normalize istiyorsan return inputs / 255.0
-        return inputs  
+    def call(self, inputs, *args, **kwargs):
+        # Eğer modelde /255 vardıysa => normalize
+        # Eğer zaten preprocess_input kullanıyorsan => sadece return inputs yap
+        return inputs / 255.0   # gerekirse burayı return inputs yaparsın
 
 @st.cache_resource
 def load_model():
     return tf.keras.models.load_model(
         "best_model.h5",
-        custom_objects={"TrueDivide": TrueDivide},  # 🔑 artık Layer class verdik
+        custom_objects={"TrueDivide": TrueDivide},
         compile=False
     )
 
