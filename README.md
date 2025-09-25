@@ -20,7 +20,13 @@ Amaç, verilen görüntüleri altı sınıftan birine doğru şekilde sınıflan
 ## 🧪 Sonuçlar
 - **Test Accuracy:** %91.37  
 - ROC AUC ve F1 skorları hesaplanmıştır.  
-- Model, UI üzerinden yüklenen görsellerde de başarıyla çalışmaktadır.  
+- Model, UI üzerinden yüklenen görsellerde de başarıyla çalışmaktadır.
+
+- ## 🌐 Linkler
+- **Kaggle Notebook (Supervised):** [Akbank Bootcamp Notebook](https://www.kaggle.com/code/ahmetemreozumagi/akbank-bootcamp)  
+- **GitHub Repo (Ahmet Emre Özumagil):** [Akbank Bootcamp Project](https://github.com/AhmetEmreOzumagi/Akbank-Bootcamp-Project)  
+- **GitHub Repo (Elif Büşra Çaylan):** [Akbank Bootcamp Project](https://github.com/ebus99/Akbank-Bootcamp_Project)
+
 
 ## 📂 Repository Yapısı
 │
@@ -32,3 +38,5 @@ Amaç, verilen görüntüleri altı sınıftan birine doğru şekilde sınıflan
 ├── README.md
 ├── LICENSE
 └── .gitignore
+
+
