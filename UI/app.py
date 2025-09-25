@@ -3,10 +3,15 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 
+from keras.utils import custom_object_scope
+import tensorflow as tf
+
 @st.cache_resource
 def load_model():
-    model = tf.keras.models.load_model("best_model.h5")
+    with custom_object_scope({'TrueDivide': tf.keras.layers.Lambda(lambda x: x)}):
+        model = tf.keras.models.load_model("best_model.h5", compile=False)
     return model
+
 
 model = load_model()
 class_names = ["buildings", "forest", "glacier", "mountain", "sea", "street"]
