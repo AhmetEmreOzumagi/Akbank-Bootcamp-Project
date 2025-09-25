@@ -3,10 +3,17 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 
+# ✅ TrueDivide fix
+def TrueDivide(x):
+    return tf.divide(x, 255.0)
+
 @st.cache_resource
 def load_model():
-    model = tf.keras.models.load_model("best_model.h5")
-    return model
+    return tf.keras.models.load_model(
+        "best_model.h5",
+        custom_objects={"TrueDivide": tf.keras.layers.Lambda(TrueDivide)},
+        compile=False
+    )
 
 model = load_model()
 class_names = ["buildings", "forest", "glacier", "mountain", "sea", "street"]
