@@ -3,15 +3,19 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 
-# ✅ TrueDivide hack (hiçbir şey yapmayan / dummy fonksiyon)
-def TrueDivide(x, *args, **kwargs):
-    return x   # ya da tf.divide(x, 255.0) yapmak istersen burada değiştir
+# ✅ Dummy TrueDivide Layer
+class TrueDivide(tf.keras.layers.Layer):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+    def call(self, inputs):
+        # Eğer normalize istiyorsan return inputs / 255.0
+        return inputs  
 
 @st.cache_resource
 def load_model():
     return tf.keras.models.load_model(
         "best_model.h5",
-        custom_objects={"TrueDivide": TrueDivide},  # 🔑 burası önemli
+        custom_objects={"TrueDivide": TrueDivide},  # 🔑 artık Layer class verdik
         compile=False
     )
 
