@@ -23,7 +23,7 @@ Amaç, verilen görüntüleri altı sınıftan birine doğru şekilde sınıflan
 - Model, UI üzerinden yüklenen görsellerde de başarıyla çalışmaktadır.
 
 - ## 🌐 Linkler
-- **Kaggle Notebook (Supervised):** [Akbank Bootcamp Notebook](https://www.kaggle.com/code/ahmetemreozumagi/akbank-bootcamp)  
+- **Kaggle Notebook (Supervised):** [Akbank Bootcamp Notebook](https://www.kaggle.com/code/ahmetemreozumagi/akbank-bootcamp-project)  
 - **GitHub Repo (Ahmet Emre Özumagil):** [Akbank Bootcamp Project](https://github.com/AhmetEmreOzumagi/Akbank-Bootcamp-Project)  
 - **GitHub Repo (Elif Büşra Çaylan):** [Akbank Bootcamp Project](https://github.com/ebus99/Akbank-Bootcamp_Project)
 
