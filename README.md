@@ -39,4 +39,26 @@ Amaç, verilen görüntüleri altı sınıftan birine doğru şekilde sınıflan
 ├── LICENSE
 └── .gitignore
 
+## ⚙️ Nasıl Çalıştırılır?
+
+Bu projeyi kendi bilgisayarınızda çalıştırmak için adımlar şunlardır:
+
+1. Projeyi bilgisayarınıza indirin (repo’yu kopyalamak için):  
+   git clone https://github.com/AhmetEmreOzumagi/Akbank-Bootcamp-Project.git
+
+2. İndirilen klasörün içine ve ardından UI klasörüne gidin:  
+   cd Akbank-Bootcamp-Project  
+   cd UI
+
+3. Gerekli kütüphaneleri yükleyin:  
+   Eğer requirements.txt dosyası varsa:  
+   pip install -r requirements.txt  
+   Eğer yoksa temel kütüphaneleri yüklemek için:  
+   pip install streamlit tensorflow pillow numpy
+
+4. Streamlit arayüzünü başlatın:  
+   streamlit run app.py
+
+5. Komutu çalıştırdıktan sonra tarayıcıda bir web arayüzü açılacaktır.  
+   Bu arayüz üzerinden bir resim yükleyerek modelin tahmin sonucunu görebilirsiniz.
 
