@@ -15,17 +15,18 @@ st.title("🌍 Intel Image Classification – Akbank Bootcamp Project")
 uploaded_file = st.file_uploader("Bir resim yükleyin", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None:
-    # Görseli oku ve 224x224 boyutlandır
-    image = Image.open(uploaded_file).resize((224, 224))
+    # ✅ Görseli RGB'ye çevir ve 224x224 boyutlandır
+    image = Image.open(uploaded_file).convert("RGB").resize((224, 224))
     st.image(image, caption="Yüklenen Görsel", use_column_width=True)
 
-    # NumPy array'e çevir
+    # ✅ NumPy array'e çevir
     img_array = np.array(image)
     img_array = np.expand_dims(img_array, axis=0)
 
-    # ⚠️ Burada ekstra preprocess_input YOK → model zaten içinde yapıyor
-    # img_array = tf.keras.applications.mobilenet_v2.preprocess_input(img_array)  ❌ gerek yok
+    # ⚠️ Ekstra normalize etmeye gerek yok → model içinde var
+    # Eğer eğitimde preprocess_input kullanmadıysan buraya ekleyebilirsin
 
+    # ✅ Tahmin yap
     predictions = model.predict(img_array)
     pred_class = class_names[np.argmax(predictions)]
     confidence = np.max(predictions)
