@@ -51,9 +51,7 @@ Bu projeyi kendi bilgisayarınızda çalıştırmak için adımlar şunlardır:
    cd UI
 
 3. Gerekli kütüphaneleri yükleyin:  
-   Eğer requirements.txt dosyası varsa:  
-   pip install -r requirements.txt  
-   Eğer yoksa temel kütüphaneleri yüklemek için:  
+   Temel kütüphaneleri yüklemek için:  
    pip install streamlit tensorflow pillow numpy
 
 4. Streamlit arayüzünü başlatın:  
