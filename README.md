@@ -23,3 +23,12 @@ Amaç, verilen görüntüleri altı sınıftan birine doğru şekilde sınıflan
 - Model, UI üzerinden yüklenen görsellerde de başarıyla çalışmaktadır.  
 
 ## 📂 Repository Yapısı
+│
+├── supervised.ipynb # Intel Image Classification (Supervised Learning)
+├── unsupervised.ipynb # Gözetimsiz öğrenme örneği (K-Means & PCA)
+├── UI/
+│ ├── app.py # Streamlit arayüzü
+│ └── best_model.h5 # Eğitilmiş model
+├── README.md
+├── LICENSE
+└── .gitignore
