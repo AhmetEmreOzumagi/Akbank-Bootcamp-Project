@@ -3,15 +3,15 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 
-# ✅ TrueDivide fix
+# ✅ TrueDivide fonksiyonu (dummy)
 def TrueDivide(x):
-    return tf.divide(x, 255.0)
+    return tf.math.truediv(x, 255.0)
 
 @st.cache_resource
 def load_model():
     return tf.keras.models.load_model(
         "best_model.h5",
-        custom_objects={"TrueDivide": tf.keras.layers.Lambda(TrueDivide)},
+        custom_objects={"TrueDivide": TrueDivide},  # 🔑 fonksiyon olarak ver
         compile=False
     )
 
